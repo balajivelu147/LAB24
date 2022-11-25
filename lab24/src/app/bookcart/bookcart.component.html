@@ -1,0 +1,19 @@
+<nav>
+    <input type="text" [(ngModel)]="author" name="author" (ngModelChange)="Search()" placeholder="Search Here" >
+    
+</nav>
+<table>
+    <tr>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Price</th>
+    </tr>
+    <tr *ngFor="let book of bookList">
+        <td>{{book.author}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.price}}</td>
+        <td><button mat-raised-button>Add to Wishlist</button></td>
+        <td><button mat-raised-button (click)="addtoCart(book)">Add to Cart</button></td>
+    </tr>
+</table>
+
