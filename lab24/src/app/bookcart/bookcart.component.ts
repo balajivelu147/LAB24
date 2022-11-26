@@ -13,6 +13,7 @@ export class BookcartComponent implements OnInit {
  
   public bookList:any=[];
    author:any;
+   title:any;
 
   ngOnInit(): void {
     this.api.getBookList().subscribe((result:any)=>{
@@ -28,18 +29,24 @@ export class BookcartComponent implements OnInit {
   }
   /*--------------------For Search-------------------------------*/
   public Search(){
-    if(this.author == ""){
+    if(this.author == "" ){
       this.ngOnInit();
     }else{
       this.bookList=this.bookList.filter((res:any)=>{
         return res.author.toLocaleLowerCase().match(this.author.toLocaleLowerCase())
+      
       });
-    }}
+    } }
+    
 /**-------------------------------add to cart------------------------------------------------------- */
 public addtoCart(item:any){
   this.api.addtoCart(item);
 }
-    
+/**------------------------------search in nav------------------------------------------- */
+onSearchButton(){
+  this.author = "";
+  this.Search();
+}    
 
 }
 

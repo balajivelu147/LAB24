@@ -1,7 +1,9 @@
-<nav>
-    <input type="text" [(ngModel)]="author" name="author" (ngModelChange)="Search()" placeholder="Search Here" >
-    
-</nav>
+
+    <input type="text" [(ngModel)]="author" class="see" (ngModelChange)="Search()"
+     autocomplete="off" placeholder="Search Here" >
+    <button mat-button mat-icon-button class="see1" *ngIf="author" (click)="onSearchButton()">
+        <mat-icon>close</mat-icon></button>
+
 <table>
     <tr>
         <th>Author</th>
