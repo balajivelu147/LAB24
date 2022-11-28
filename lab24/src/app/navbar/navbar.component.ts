@@ -9,12 +9,14 @@ import { DataService } from '../services/data.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private cart:DataService) { }
+  constructor(private cart:DataService,private wish:DataService) { }
   cartItemNumber:number=0;
+  wishItemNumber:number=0;
   ngOnInit(): void {
+   
     this.cart.getProductData().subscribe(res=>{
       this.cartItemNumber=res.length;
-    })
+    });
   }
 
 }

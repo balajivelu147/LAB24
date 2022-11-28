@@ -12,8 +12,10 @@ import { BookcartComponent } from './bookcart/bookcart.component';
 import { MyorderComponent } from './myorder/myorder.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,HttpClientModule,FormsModule,
+    MaterialModule,HttpClientModule,AutocompleteLibModule,
+    FormsModule,ReactiveFormsModule,
     Ng2SearchPipeModule
   ],
   providers: [],
