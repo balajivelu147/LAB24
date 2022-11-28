@@ -1,0 +1,76 @@
+<div class="bookdetails"><p class="detail">Book details</p></div>
+ <div class="col-md-3 col-sm-12">
+        <mat-card class="example-card" >
+    <span class="only-show-on-hover" >{{bookDetail.title}}</span>
+    <img class="example-header-image" src="{{url}}{{bookDetail.coverFileName}}">
+
+</mat-card>
+</div>
+
+    <div class="col-md-5 col-sm-12" >
+        <table class="table" style="line-height: 50px;">
+            <tr>
+                <td><strong>Title</strong></td>
+                <td>{{bookDetail.title}}</td>
+            </tr>
+            <tr>
+                <td><strong>Author</strong></td>
+                <td>{{bookDetail.author}}</td>
+            </tr>
+            <tr>
+                <td><strong>Category</strong></td>
+                <td>{{bookDetail.category}}</td>
+            </tr>
+            <tr>
+                <td><strong>Price</strong></td>
+                <td>{{bookDetail.price | currency : 'INR'}}</td>
+            </tr>
+            <br>
+
+
+            <button mat-raised-button color="primary" class="addTo" (click)="addToCart()"   ><mat-icon ><span style="margin-left:-20px ;margin-bottom: 75px; "
+                 >shopping_cart</span></mat-icon>Add to cart
+           </button>
+           
+        </table>
+        
+      
+    </div>  <br><br>
+    
+
+<div class="header" ><p class="similar" style="margin-top:250px ;">similar books</p></div>
+
+<div class="row">
+        
+    <div class="col-sm-12"></div>
+</div>
+<div class="row">
+    
+<div class="col-lg-2" *ngFor="let data of getbookid">
+
+<mat-card class="similar-card">
+<span class="only-show-on-hover" >{{data.title}}</span>
+<img class="example-header-image" src="{{url}}{{data.coverFileName}}">
+<mat-card-content class="content">
+    <a routerLink="/move/{{data.bookId}}"><strong>
+        <div class="types">{{data.title}}</div> 
+    </strong></a><br>
+    <p class="price">{{data.price | currency:"INR"}}</p>
+    <br>
+
+    
+
+      <button mat-raised-button color="primary"
+              class="addTo" style="margin-bottom: 20px;"  ><mat-icon>shopping_cart</mat-icon>Add to cart
+              
+           
+            </button>
+
+            
+            
+    </mat-card-content>
+
+
+</mat-card></div>
+</div>
+
