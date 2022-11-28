@@ -1,0 +1,35 @@
+<div class="container" style="margin-top:50px ;">
+    <div class="row">
+        <div class="col-lg-3" *ngFor="let data of productlist">
+          
+          <mat-card>
+              <span class="only-show-on-hover" >{{data.title}}</span>
+              <img class="example-header-image" src="{{url}}{{data.coverFileName}}">
+              <h4>{{data.category}}</h4>
+
+
+              <mat-card-content class="content">
+                  <a routerLink="/move/{{data.bookId}} "><strong>
+                      <div class="types">{{data.title}}</div> 
+                  </strong></a><br>
+                  <p class="price">{{data.price | currency:"INR"}}</p>
+                  <br>
+<span class="favorite">
+                  <button mat-icon-button (click)="toggleselected(data)">
+                      <mat-icon *ngIf="data.selected ">favorite</mat-icon>
+                      <mat-icon *ngIf="!data.selected">favorite_border</mat-icon>
+                  </button>
+                </span>
+                
+
+                  <button mat-raised-button color="primary"
+                  class="addTo" style="margin-bottom: 20px;" (click)="show()" ><mat-icon>shopping_cart</mat-icon>Add to cart
+                  
+               
+                </button>
+
+              </mat-card-content>
+          </mat-card>
+        </div>
+    </div>
+</div>
