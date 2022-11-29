@@ -9,7 +9,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { WhishlistComponent } from './whishlist/whishlist.component';
 
 const routes: Routes = [
-  {path:'',component:BookcartComponent},
+  {path:'',component:LoginComponent},
   {path:'bookcart',component:BookcartComponent},
   {path:'wishlist',component:WhishlistComponent},
   {path:'shopping-cart',component:ShoppingCartComponent},
