@@ -1,0 +1,21 @@
+        <input type="text" [(ngModel)]="title" class="see" (ngModelChange)="Search()"
+     autocomplete="off" placeholder="Search books title" >
+    <button mat-button mat-icon-button class="see1" *ngIf="title" (click)="onSearchButton()">
+        <mat-icon>close</mat-icon></button>
+   
+
+<table>
+    <tr>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Price</th>
+    </tr>
+    <tr *ngFor="let book of bookList">
+        <td>{{book.author}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.price}}</td>
+        <td><button mat-raised-button >Add to Wishlist</button></td>
+        <td><button mat-raised-button (click)="addtoCart(book)">Add to Cart</button></td>
+    </tr>
+</table>
+
